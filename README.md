@@ -10,12 +10,12 @@ Game feature actions to support modular use of the gameplay abilities system.
  
 <a name="UGameFeatureAction_AddGameplayCuePath"></a>
 ## Add Gameplay Cue Path
-_[Back to Top](#top)_
+⬆️ _[Back to Top](#top)_
 
 blah blah blah
 
 <a name="UGameFeatureAction_AddAbilities"></a>
 ## Add Abilities
-_[Back to Top](#top)_
+⬆️ _[Back to Top](#top)_
 
 blah blah blah
