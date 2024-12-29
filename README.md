@@ -16,11 +16,9 @@ Adds additional directories that are under the same directory as the owning
 (GameFeature-) Asset to the GameplayCueManager's search path.   
 Those directories will be added the moment your GameFeature is registered and removed when it is unregistered.
 
-:note: After adding a new directory to the search path, the GameplayCueManager will not automatically update.
-Which means you need to restart the editor to apply the changes.
+        After adding a new directory to the search path, the GameplayCueManager will not automatically update.
+        Which means you need to restart the editor to apply the changes.
 
 <a name="UGameFeatureAction_AddAbilities"></a>
 ## Add Abilities
 ⬆️ _[Back to Top](#top)_
-
-blah blah blah
