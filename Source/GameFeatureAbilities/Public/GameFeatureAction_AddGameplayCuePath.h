@@ -26,7 +26,7 @@ public:
 
 	//~ Begin UObject Interface
 #if WITH_EDITOR
-	virtual EDataValidationResult IsDataValid(class FDataValidationContext& Context) const override;
+	virtual EDataValidationResult IsDataValid(FDataValidationContext& Context) const override;
 #endif
 	//~ End UObject Interface
 

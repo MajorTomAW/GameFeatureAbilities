@@ -11,7 +11,8 @@ public class GameFeatureAbilities : ModuleRules
 		{ 
 			"Core",
 			"GameFeatures",
-			"GameplayAbilities"
+			"GameplayAbilities",
+			"GameFeaturesExtension",
 		});
 			
 		

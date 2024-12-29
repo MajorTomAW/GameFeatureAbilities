@@ -18,6 +18,10 @@
 
 #define LOCTEXT_NAMESPACE "GameFeatures"
 
+const FPrimaryAssetType UAssetManager_GameplayCueRefsType = FPrimaryAssetType("GameplayCueRefs");
+const FName UAssetManager_GameplayCueRefsName = FName("GameplayCueReferences");
+const FName UAssetManager_LoadStateClient = FName("Client");
+
 UGameFeatureAction_AddGameplayCuePath::UGameFeatureAction_AddGameplayCuePath()
 {
 	// Add a default path that is commonly used
@@ -60,9 +64,9 @@ void UGameFeatureAction_AddGameplayCuePath::OnGameFeatureRegistering()
 			RuntimeCueSet->GetSoftObjectPaths(CuePaths);
 
 			FAssetBundleData BundleData;
-			BundleData.AddBundleAssetsTruncated(UGameFeaturesSubsystemSettings::LoadStateClient, CuePaths);
+			BundleData.AddBundleAssetsTruncated(UAssetManager_LoadStateClient, CuePaths);
 
-			FPrimaryAssetId PrimaryAssetId = FPrimaryAssetId("GameplayCueRefs", "GameplayCueReferences");
+			const FPrimaryAssetId PrimaryAssetId = FPrimaryAssetId(UAssetManager_GameplayCueRefsType, UAssetManager_GameplayCueRefsName);
 			UAssetManager::Get().AddDynamicAsset(PrimaryAssetId, FSoftObjectPath(), BundleData);
 		}
 	}
