@@ -1,6 +1,8 @@
 # Game Feature Abilities
 Game feature actions to support modular use of the gameplay abilities system.
 
+Depends on [Game Features Extension](https://github.com/MajorTomAW/GameFeatureExtension)
+
 <a name="top"></a>
 ## Game Feature Actions
 - **[Add Gameplay Cue Path](#UGameFeatureAction_AddGameplayCuePath)**
