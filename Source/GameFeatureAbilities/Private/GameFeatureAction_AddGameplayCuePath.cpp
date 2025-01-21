@@ -26,15 +26,13 @@ UGameFeatureAction_AddGameplayCuePath::UGameFeatureAction_AddGameplayCuePath()
 {
 	// Add a default path that is commonly used
 	GameplayCuePaths.Add(FDirectoryPath(TEXT("/GameplayCues")));
-
-	PluginName = FString();
 }
 
 void UGameFeatureAction_AddGameplayCuePath::OnGameFeatureRegistering()
 {
 	TRACE_CPUPROFILER_EVENT_SCOPE(UGameFeatureAction_AddGameplayCuePath::OnGameFeatureRegistering);
 
-	const FString PluginRootPath = TEXT("/") + PluginName;
+	const FString PluginRootPath = TEXT("/") + PluginURL.GetPluginName();
 
 	UGameplayCueManager* CueManager = UAbilitySystemGlobals::Get().GetGameplayCueManager();
 	if (CueManager)
@@ -74,7 +72,7 @@ void UGameFeatureAction_AddGameplayCuePath::OnGameFeatureRegistering()
 
 void UGameFeatureAction_AddGameplayCuePath::OnGameFeatureUnregistering()
 {
-	const FString PluginRootPath = TEXT("/") + PluginName;
+	const FString PluginRootPath = TEXT("/") + PluginURL.GetPluginName();
 
 	UGameplayCueManager* CueManager = UAbilitySystemGlobals::Get().GetGameplayCueManager();
 	if (CueManager)
@@ -102,7 +100,7 @@ EDataValidationResult UGameFeatureAction_AddGameplayCuePath::IsDataValid(class F
 {
 	EDataValidationResult Result = Super::IsDataValid(Context);
 
-	if (PluginName.IsEmpty())
+	if (PluginURL.GetPluginName().IsEmpty())
 	{
 		const FText Message = LOCTEXT("EmptyPluginName", "PluginName must be set!");
 		Context.AddError(Message);

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFeatureAction.h"
+#include "GameFeaturePluginURL.h"
 #include "GameFeatureAction_AddGameplayCuePath.generated.h"
 
 /**
@@ -32,8 +33,8 @@ public:
 
 private:
 	/** The name of the plugin that owns this game feature. */
-	UPROPERTY(EditAnywhere, Category = "Gameplay Cues")
-	FString PluginName;
+	UPROPERTY(EditAnywhere, Category = "Gameplay Cues", meta = (DisplayName = "Plugin"))
+	FGameFeaturePluginURL PluginURL;
 	
 	/**
 	 * List of paths to register to the gameplay cue manager.
